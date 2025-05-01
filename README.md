@@ -1,30 +1,20 @@
 
-# Proyecto de Gestión Clínica con Docker
+# Proyecto de Gestión Clínica - Entorno Base con Docker
 
-Este proyecto incluye dos aplicaciones:
-- **Backend (Nest.js)**: Servidor que maneja la lógica de negocio.
-- **Frontend (Angular)**: Aplicación cliente para interactuar con el sistema.
+Este entorno contiene dos servicios:
+- **Backend** (Nest.js)
+- **Frontend** (Angular)
 
-## Requisitos
+## 🚀 Requisitos
+- Docker y Docker Compose instalados
 
-- Docker
-- Docker Compose
+## ▶️ Cómo ejecutar
 
-## Instrucciones para ejecutar el proyecto
-
-1. Clona este repositorio:
+1. Abre terminal en la carpeta raíz del proyecto
+2. Ejecuta:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_DIRECTORIO>
+   docker-compose up --build
    ```
-
-2. Construye y ejecuta ambos contenedores:
-   ```bash
-   docker-compose -f backend/docker-compose.yml up --build
-   docker-compose -f frontend/docker-compose.yml up --build
-   ```
-
-3. Accede a:
-   - **Backend**: http://localhost:3000
-   - **Frontend**: http://localhost:4200
-   
+3. Accede en el navegador:
+   - Backend: http://localhost:3000
+   - Frontend: http://localhost:4200
