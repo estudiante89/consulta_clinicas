@@ -1,0 +1,16 @@
+
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "dependencies": {
+    "@angular/cli": "^16.0.0",
+    "rxjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build"
+  }
+}
