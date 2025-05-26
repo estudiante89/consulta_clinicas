@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Patient List</h2>
+    <button routerLink="/patients/new" class="btn btn-primary">
+      Add New Patient
+    </button>
+  </div>
+
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && patients.length === 0" class="alert alert-info">
+    No patients found.
+  </div>
+
+  <div *ngIf="!isLoading && patients.length > 0" class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID Document</th>
+          <th>Birth Date</th>
+          <th>Phone</th>
+          <th>Health Coverage</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.fullName }}</td>
+          <td>{{ patient.identityDocument }}</td>
+          <td>{{ patient.birthDate | date }}</td>
+          <td>{{ patient.phoneNumber }}</td>
+          <td>{{ patient.healthCoverage || 'None' }}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <a [routerLink]="['/patients', patient.id]" class="btn btn-sm btn-info">View</a>
+              <a [routerLink]="['/patients', patient.id, 'edit']" class="btn btn-sm btn-warning">Edit</a>
+              <button (click)="deletePatient(patient.id)" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
