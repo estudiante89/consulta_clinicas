@@ -2,146 +2,102 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Plataforma Médica </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma Médica</title>
   <base href="/" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f2f1, #ffffff);
+      font-family: 'Inter', sans-serif;
+      background: #f2f6f9;
       color: #333;
     }
 
     header {
-      background: #0077b6;
-      padding: 2rem 1rem;
-      text-align: center;
+      background: linear-gradient(to right, #0077b6, #00b4d8);
       color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1.5rem;
-      background-color: #ffffff;
+      font-size: 1.8rem;
     }
 
     nav button {
-      background: #00b4d8;
+      background: white;
+      color: #0077b6;
       border: none;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      font-size: 1rem;
-      color: white;
+      padding: 0.6rem 1.2rem;
+      margin-left: 1rem;
+      border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background 0.3s;
     }
 
     nav button:hover {
-      background: #0096c7;
-      transform: scale(1.05);
+      background: #caf0f8;
     }
 
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .grid {
+    .hero {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
+      padding: 3rem 2rem;
+      background: url('https://images.unsplash.com/photo-1588776814546-d03d3a3fd05e') center/cover no-repeat;
+      color: white;
+      text-shadow: 1px 1px 2px #000;
+      min-height: 400px;
     }
 
-    .card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      width: 300px;
-      text-align: left;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
+    .hero h2 {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
-    .card h3 {
-      margin: 0.5rem 0;
-      color: #0077b6;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
     }
 
     footer {
+      text-align: center;
+      padding: 1rem;
       background: #0077b6;
       color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Plataforma Médica Dinámica</h1>
+    <h1>Plataforma Médica</h1>
+    <nav>
+      <button onclick="location.href='/auth'">Autenticación</button>
+      <button onclick="location.href='/historial'">Historial</button>
+      <button onclick="location.href='/recetas'">Recetas</button>
+      <button onclick="location.href='/citas'">Citas Médicas</button>
+      <button onclick="location.href='/reportes'">Reportes</button>
+    </nav>
   </header>
 
-  <nav>
-    <button>Autenticación</button>
-    <button>Historial</button>
-    <button>Consulta de Recetas</button>
-    <button>Citas Médicas</button>
-    <button>Reportes</button>
-  </nav>
-
-  <main>
-    <h2>Servicios al alcance de tu salud</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1588776814546-ec7d823d6f4f?auto=format&fit=crop&w=800&q=80" alt="Doctor consultando">
-        <h3>Historial Médico</h3>
-        <p>Accede a todos tus antecedentes clínicos desde cualquier lugar, en cualquier momento.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1603398938378-cf1b0b110f88?auto=format&fit=crop&w=800&q=80" alt="Recetas médicas">
-        <h3>Recetas Médicas</h3>
-        <p>Consulta tus tratamientos, prescripciones y detalles de tus medicamentos.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=800&q=80" alt="Calendario de citas">
-        <h3>Citas Médicas</h3>
-        <p>Agenda, modifica o cancela tus citas con médicos de distintas especialidades.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="Reportes clínicos">
-        <h3>Reportes</h3>
-        <p>Descarga y revisa todos tus análisis clínicos e informes médicos oficiales.</p>
-      </div>
+  <div class="hero">
+    <div>
+      <h2>Tu salud, nuestra prioridad</h2>
+      <p>Accede a tu historial médico, gestiona tus citas y consulta tus reportes de forma rápida y segura desde cualquier lugar.</p>
     </div>
-  </main>
+  </div>
+
+  <app-root></app-root>
 
   <footer>
-    &copy; 2025 Plataforma Médica  — Todos los derechos reservados
+    © 2025 Plataforma Médica. Todos los derechos reservados.
   </footer>
 </body>
 </html>
