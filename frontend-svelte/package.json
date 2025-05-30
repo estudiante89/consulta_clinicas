@@ -1,0 +1,17 @@
+{
+  "name": "frontend-svelte",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/kit": "latest",
+    "svelte": "^3.59.2"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
