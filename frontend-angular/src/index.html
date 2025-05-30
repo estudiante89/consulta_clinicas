@@ -45,11 +45,17 @@
       background: #caf0f8;
     }
 
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background-color: #000;
+    }
+
     .carousel {
       position: relative;
       width: 100%;
-      max-height: 400px;
-      overflow: hidden;
+      height: 400px;
     }
 
     .carousel img {
@@ -64,6 +70,25 @@
     .carousel img.active {
       opacity: 1;
       position: relative;
+    }
+
+    .intro-text {
+      text-align: center;
+      background: #e3f2fd;
+      padding: 2rem 1rem;
+    }
+
+    .intro-text h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0077b6;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      color: #333;
     }
 
     .section {
@@ -118,19 +143,27 @@
     </nav>
   </header>
 
-  <!-- Carrusel -->
-  <div class="carousel">
-    <img src="imagenes/hospital.jfif" class="active" />
-    <img src="imagenes/hospital2.jfif" />
-    <img src="imagenes/medicos1.jfif" />
-    <img src="imagenes/medicos2.jfif" />
-    <img src="imagenes/presentacion.jfif" />
+  <!-- Carrusel + Intro -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <img src="imagenes/hospital.jfif" class="active" />
+      <img src="imagenes/hospital2.jfif" />
+      <img src="imagenes/medicos1.jfif" />
+      <img src="imagenes/medicos2.jfif" />
+      <img src="imagenes/presentacion.jfif" />
+    </div>
   </div>
 
-  <!-- App root -->
+  <!-- Texto introductorio -->
+  <div class="intro-text">
+    <h2>Tu salud, nuestra prioridad</h2>
+    <p>Accede a tu historial médico, gestiona tus citas y consulta tus reportes de forma rápida y segura desde cualquier lugar.</p>
+  </div>
+
+  <!-- Angular Root -->
   <app-root></app-root>
 
-  <!-- Galería estática -->
+  <!-- Galería de servicios -->
   <div class="section">
     <h2>Nuestros Servicios</h2>
     <div class="gallery">
@@ -146,7 +179,7 @@
   </footer>
 
   <script>
-    // Carrusel JS
+    // Carrusel
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
 
