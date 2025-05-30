@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f0f4f8;
+      background: #f2f6f9;
       color: #333;
     }
 
@@ -45,10 +45,15 @@
     }
 
     .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
       background: url('https://images.unsplash.com/photo-1588776814546-d03d3a3fd05e') center/cover no-repeat;
       color: white;
       text-shadow: 1px 1px 2px #000;
-      padding: 3rem 2rem;
+      min-height: 400px;
       text-align: center;
     }
 
@@ -59,45 +64,53 @@
 
     .hero p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .sections {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 3rem 2rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      margin: 2rem auto;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-      cursor: pointer;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .carousel-images {
+      display: flex;
+      animation: slide 20s infinite;
     }
 
-    .card img {
+    .carousel-images img {
       width: 100%;
-      height: 180px;
+      max-height: 400px;
       object-fit: cover;
     }
 
-    .card h3 {
-      margin: 1rem;
-      color: #0077b6;
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(0); }
+      25% { transform: translateX(-100%); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      70% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      95% { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
     }
 
-    .card p {
-      margin: 0 1rem 1.5rem;
-      font-size: 0.95rem;
-      color: #555;
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      object-fit: cover;
+      height: 220px;
     }
 
     footer {
@@ -116,42 +129,34 @@
       <button onclick="location.href='/auth'">Autenticación</button>
       <button onclick="location.href='/historial'">Historial</button>
       <button onclick="location.href='/recetas'">Recetas</button>
-      <button onclick="location.href='/citas'">Citas</button>
+      <button onclick="location.href='/citas'">Citas Médicas</button>
       <button onclick="location.href='/reportes'">Reportes</button>
     </nav>
   </header>
 
   <div class="hero">
-    <h2>Tu salud, nuestra prioridad</h2>
-    <p>Accede fácilmente a tus servicios médicos desde cualquier lugar. Gestión integral y segura de tu salud al alcance de un clic.</p>
+    <div>
+      <h2>Tu salud, nuestra prioridad</h2>
+      <p>Accede a tu historial médico, gestiona tus citas y consulta tus reportes de forma rápida y segura desde cualquier lugar.</p>
+    </div>
   </div>
 
-  <div class="sections">
-    <div class="card" onclick="location.href='/auth'">
-      <img src="https://images.unsplash.com/photo-1611691542484-0710136f0b3e" alt="Autenticación">
-      <h3>Autenticación</h3>
-      <p>Inicia sesión de forma segura y accede a todos tus servicios médicos personalizados.</p>
+  <!-- Carrusel de imágenes -->
+  <div class="carousel">
+    <div class="carousel-images">
+      <img src="https://images.unsplash.com/photo-1588776814546-d03d3a3fd05e" alt="Consulta médica" />
+      <img src="https://images.unsplash.com/photo-1579154203451-0ef30074f7f5" alt="Hospital moderno" />
+      <img src="https://images.unsplash.com/photo-1609921212029-f6eb01a00e2b" alt="Médico con paciente" />
+      <img src="https://images.unsplash.com/photo-1580281657527-47b82d0a1b65" alt="Tecnología médica" />
     </div>
-    <div class="card" onclick="location.href='/historial'">
-      <img src="https://images.unsplash.com/photo-1603398938378-e57b58a33dbd" alt="Historial médico">
-      <h3>Historial Médico</h3>
-      <p>Consulta todos tus antecedentes clínicos y diagnósticos anteriores en un solo lugar.</p>
-    </div>
-    <div class="card" onclick="location.href='/recetas'">
-      <img src="https://images.unsplash.com/photo-1588776814177-043e1c8a49ff" alt="Recetas">
-      <h3>Recetas Médicas</h3>
-      <p>Consulta y descarga tus prescripciones médicas desde la comodidad de tu hogar.</p>
-    </div>
-    <div class="card" onclick="location.href='/citas'">
-      <img src="https://images.unsplash.com/photo-1588774069472-d4a3a3a3c201" alt="Citas médicas">
-      <h3>Citas Médicas</h3>
-      <p>Agenda, modifica o cancela tus citas médicas en tiempo real, sin complicaciones.</p>
-    </div>
-    <div class="card" onclick="location.href='/reportes'">
-      <img src="https://images.unsplash.com/photo-1621391400743-984a1b16b316" alt="Reportes">
-      <h3>Reportes</h3>
-      <p>Accede a reportes detallados de tus análisis y estudios médicos con un solo clic.</p>
-    </div>
+  </div>
+
+  <!-- Galería estática de imágenes -->
+  <div class="image-gallery">
+    <img src="https://images.unsplash.com/photo-1580281657685-6fe5a5eb1c30" alt="Equipo médico">
+    <img src="https://images.unsplash.com/photo-1622253692010-333f0e2e51cb" alt="Consulta médica">
+    <img src="https://images.unsplash.com/photo-1583912268181-4f3b763ae8cf" alt="Laboratorio">
+    <img src="https://images.unsplash.com/photo-1606813902444-f8f56c49efc2" alt="Cuidado hospitalario">
   </div>
 
   <app-root></app-root>
