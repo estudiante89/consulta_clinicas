@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f2f6f9;
+      background: #f0f4f8;
       color: #333;
     }
 
@@ -45,15 +45,11 @@
     }
 
     .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 2rem;
       background: url('https://images.unsplash.com/photo-1588776814546-d03d3a3fd05e') center/cover no-repeat;
       color: white;
       text-shadow: 1px 1px 2px #000;
-      min-height: 400px;
+      padding: 3rem 2rem;
+      text-align: center;
     }
 
     .hero h2 {
@@ -63,7 +59,45 @@
 
     .hero p {
       font-size: 1.2rem;
-      max-width: 600px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 1rem;
+      color: #0077b6;
+    }
+
+    .card p {
+      margin: 0 1rem 1.5rem;
+      font-size: 0.95rem;
+      color: #555;
     }
 
     footer {
@@ -82,15 +116,41 @@
       <button onclick="location.href='/auth'">Autenticación</button>
       <button onclick="location.href='/historial'">Historial</button>
       <button onclick="location.href='/recetas'">Recetas</button>
-      <button onclick="location.href='/citas'">Citas Médicas</button>
+      <button onclick="location.href='/citas'">Citas</button>
       <button onclick="location.href='/reportes'">Reportes</button>
     </nav>
   </header>
 
   <div class="hero">
-    <div>
-      <h2>Tu salud, nuestra prioridad</h2>
-      <p>Accede a tu historial médico, gestiona tus citas y consulta tus reportes de forma rápida y segura desde cualquier lugar.</p>
+    <h2>Tu salud, nuestra prioridad</h2>
+    <p>Accede fácilmente a tus servicios médicos desde cualquier lugar. Gestión integral y segura de tu salud al alcance de un clic.</p>
+  </div>
+
+  <div class="sections">
+    <div class="card" onclick="location.href='/auth'">
+      <img src="https://images.unsplash.com/photo-1611691542484-0710136f0b3e" alt="Autenticación">
+      <h3>Autenticación</h3>
+      <p>Inicia sesión de forma segura y accede a todos tus servicios médicos personalizados.</p>
+    </div>
+    <div class="card" onclick="location.href='/historial'">
+      <img src="https://images.unsplash.com/photo-1603398938378-e57b58a33dbd" alt="Historial médico">
+      <h3>Historial Médico</h3>
+      <p>Consulta todos tus antecedentes clínicos y diagnósticos anteriores en un solo lugar.</p>
+    </div>
+    <div class="card" onclick="location.href='/recetas'">
+      <img src="https://images.unsplash.com/photo-1588776814177-043e1c8a49ff" alt="Recetas">
+      <h3>Recetas Médicas</h3>
+      <p>Consulta y descarga tus prescripciones médicas desde la comodidad de tu hogar.</p>
+    </div>
+    <div class="card" onclick="location.href='/citas'">
+      <img src="https://images.unsplash.com/photo-1588774069472-d4a3a3a3c201" alt="Citas médicas">
+      <h3>Citas Médicas</h3>
+      <p>Agenda, modifica o cancela tus citas médicas en tiempo real, sin complicaciones.</p>
+    </div>
+    <div class="card" onclick="location.href='/reportes'">
+      <img src="https://images.unsplash.com/photo-1621391400743-984a1b16b316" alt="Reportes">
+      <h3>Reportes</h3>
+      <p>Accede a reportes detallados de tus análisis y estudios médicos con un solo clic.</p>
     </div>
   </div>
 
